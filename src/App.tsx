@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.scss';
 import Header from "./Components/Header/Header";
 import MainContainer from "./Components/MainContainer/MainContainer";
