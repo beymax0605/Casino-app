@@ -1,0 +1,52 @@
+@import "../../style/mixins";
+@import "../../style/variables";
+
+.Game {
+  flex-basis: 50%;
+  padding: 10px;
+  &__container {
+    padding: 8px;
+    position: relative;
+    &__ribbon {
+      pointer-events: none;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 1;
+      overflow: hidden;
+      width: 75px;
+      height: 75px;
+      text-align: right;
+
+      &__label {
+        font-size: 10px;
+        font-weight: 700;
+        color: $color-ribon-label-buttons;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 20px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 100px;
+        display: block;
+        background: $background-ribon-label-buttons;
+        box-shadow: 0 3px 10px -5px #000;
+        position: absolute;
+        top: 19px;
+        right: -21px;
+      }
+    }
+  }
+  img {
+    width: 100%;
+  }
+  @include medium {
+    flex-basis: 33%;
+  }
+  @include large {
+    flex-basis: 25%;
+  }
+  @include ex-large {
+    flex-basis: 20%;
+  }
+}

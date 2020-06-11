@@ -1,0 +1,61 @@
+@import "../../style/mixins";
+@import "../../style/variables";
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+.Header {
+  width: 100%;
+  position: fixed;
+  z-index: $z-index-header;
+  &__navigation-button {
+    width: 100%;
+    background-color: $color-header;
+    button {
+      &:focus {
+        outline: none;
+      }
+    }
+    @include large {
+      display: none;
+    }
+  }
+  .navigation {
+    &__nav {
+      background-color: $color-header;
+      display: flex;
+      width: 100%;
+      overflow-y: hidden;
+      flex-wrap: wrap;
+      transform: scaleY(0);
+      &__link {
+        cursor: pointer;
+        background: none;
+        text-align: center;
+        color: $color-menu-buttons;
+        flex-basis: 50%;
+        padding: 25px;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+        @include medium {
+          padding: 2%;
+        }
+      }
+      &.active {
+        transform: scaleY(1);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+        @include large {
+          transition: transform 0s ease;
+        }
+      }
+      @include large {
+        transform: scaleY(1);
+        flex-wrap: nowrap;
+        overflow-y: visible;
+      }
+    }
+  }
+}
+
+
