@@ -13,18 +13,16 @@ export default () => {
         </button>
       </div>
       <nav className={navigationToggle(navigation)}>
-        <button className="navigation__nav__link">HTML</button>
-        <button className="navigation__nav__link">CSS</button>
-        <button className="navigation__nav__link">JavaScript</button>
-        <button className="navigation__nav__link">Python</button>
-        <button className="navigation__nav__link">HTML</button>
-        <button className="navigation__nav__link">CSS</button>
-        <button className="navigation__nav__link">JavaScript</button>
-        <button className="navigation__nav__link">Python</button>
-        <button className="navigation__nav__link">HTML</button>
-        <button className="navigation__nav__link">CSS</button>
-        <button className="navigation__nav__link">JavaScript</button>
-        <button className="navigation__nav__link">Python</button>
+        <button className="navigation__nav__link">Top Games</button>
+        <button className="navigation__nav__link">New Games</button>
+        <button className="navigation__nav__link">Slots</button>
+        <button className="navigation__nav__link">Jackpots</button>
+        <button className="navigation__nav__link">Live</button>
+        <button className="navigation__nav__link">Blackjack</button>
+        <button className="navigation__nav__link">Roulette</button>
+        <button className="navigation__nav__link">Table</button>
+        <button className="navigation__nav__link">Poker</button>
+        <button className="navigation__nav__link">Other</button>
       </nav>
     </header>
   );
