@@ -36,6 +36,12 @@
         right: -21px;
       }
     }
+    &__jackpot {
+      position: absolute;
+      right: 100px;
+      top: 105px;
+      color: $color-ribon-label-buttons;
+    }
   }
   img {
     width: 100%;

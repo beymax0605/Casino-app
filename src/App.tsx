@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
-import Header from "./Components/Header/Header";
-import MainContainer from "./Components/MainContainer/MainContainer";
+import Header from "./components/Header/Header";
+import MainContainer from "./components/MainContainer/MainContainer";
 
 export default function App() {
   return (
