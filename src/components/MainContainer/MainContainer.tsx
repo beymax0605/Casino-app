@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import "./MainContainer.scss"
 import Game from "../Game/Game";
+import Spinner from "../Spinner/Spinner";
 import {connect} from "react-redux";
 import {bindActionCreators, Dispatch} from "redux";
 import fetchJackpots from "./services/fetch-jackpots";
@@ -19,16 +20,13 @@ const MainContainer = (props: { fetchJackpots: Function, fetchGames: Function , 
 
   return (
     <div className="Main-Container">
+      <Spinner/>
       {renderGames(gameStore)}
     </div>
   );
 }
 
-function renderGames(game: GameStateInterface): string | JSX.Element[] {
-  if(game.pending) {
-    return "Loading ...."
-  }
-
+function renderGames(game: GameStateInterface): JSX.Element | JSX.Element[] {
   const gamesCount = game.data.length;
   let renderGames = [];
   for (let i = 0; i < gamesCount; i++) {
