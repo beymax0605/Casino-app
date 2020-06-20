@@ -38,6 +38,9 @@
         &:focus {
           outline: none;
         }
+        &.active {
+          background-color: $background-active-buttons
+        }
       }
       &.active {
         transform: scaleY(1);

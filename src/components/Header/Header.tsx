@@ -1,7 +1,14 @@
 import React, {useState} from "react";
 import "./Header.scss";
+import {StoreType} from "../../redux/store.type";
+import {connect} from "react-redux";
+import {getActiveCategory, getCategoriesSelector} from "../../redux/Category/selectors";
+import {CategoryDataInterface} from "../../redux/Category/types/category-data.interface";
+import {bindActionCreators, Dispatch} from "redux";
 
-export default () => {
+const Header = (props: { categories: CategoryDataInterface[], activeCategory: string}) => {
+  const {categories, activeCategory} = props;
+
   const [navigation, setNavigation] = useState(false);
   return (
     <header className="Header">
@@ -13,19 +20,18 @@ export default () => {
         </button>
       </div>
       <nav className={navigationToggle(navigation)}>
-        <button className="navigation__nav__link">Top Games</button>
-        <button className="navigation__nav__link">New Games</button>
-        <button className="navigation__nav__link">Slots</button>
-        <button className="navigation__nav__link">Jackpots</button>
-        <button className="navigation__nav__link">Live</button>
-        <button className="navigation__nav__link">Blackjack</button>
-        <button className="navigation__nav__link">Roulette</button>
-        <button className="navigation__nav__link">Table</button>
-        <button className="navigation__nav__link">Poker</button>
-        <button className="navigation__nav__link">Other</button>
+        {
+          categories.map((el: CategoryDataInterface) =>
+            <button key={el.key} className={buttonNavigationClass(activeCategory, el.key)}>{el.value}</button>
+          )
+        }
       </nav>
     </header>
   );
+}
+
+const buttonNavigationClass = (selected: string, currentCategoryKey: string) => {
+  return selected === currentCategoryKey ? 'navigation__nav__link active' : 'navigation__nav__link'
 }
 
 const navigationToggle = (navigation: boolean) => {
@@ -39,3 +45,15 @@ const buttonToggle = (navigation: boolean) => {
 const toggleNavigation = (navigation: boolean, setNavigation: Function) => {
   setNavigation(!navigation);
 }
+
+const mapStateToProps = (state: StoreType) => ({
+  categories: getCategoriesSelector(state),
+  activeCategory: getActiveCategory(state)
+})
+
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
