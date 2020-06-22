@@ -8,11 +8,13 @@ const data: CategoryDataInterface[] = [
   {key: "jackpots", value: "Jackpots"},
   {key: "live", value: "Live"},
   {key: "blackjack", value: "Blackjack"},
-  {key: "Roulette", value: "Roulette"},
+  {key: "roulette", value: "Roulette"},
   {key: "table", value: "Table"},
   {key: "poker", value: "Poker"},
   {key: "other", value: "Other"},
 ]
+
+export const allCategories: Array<string> = ["home", "new", "slots", "jackpots", "live", "blackjack", "roulette", "table", "poker"]
 
 
 export const initialState: CategoryStateInterface = {

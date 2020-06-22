@@ -5,9 +5,10 @@ import {connect} from "react-redux";
 import {getActiveCategory, getCategoriesSelector} from "../../redux/Category/selectors";
 import {CategoryDataInterface} from "../../redux/Category/types/category-data.interface";
 import {bindActionCreators, Dispatch} from "redux";
+import {SelectCategoryAction} from "../../redux/Category/types/select-category-action.type";
 
-const Header = (props: { categories: CategoryDataInterface[], activeCategory: string}) => {
-  const {categories, activeCategory} = props;
+const Header = (props: { categories: CategoryDataInterface[], activeCategory: string, selectCategory: Function}) => {
+  const {categories, activeCategory, selectCategory} = props;
 
   const [navigation, setNavigation] = useState(false);
   return (
@@ -21,9 +22,9 @@ const Header = (props: { categories: CategoryDataInterface[], activeCategory: st
       </div>
       <nav className={navigationToggle(navigation)}>
         {
-          categories.map((el: CategoryDataInterface) =>
-            <button key={el.key} className={buttonNavigationClass(activeCategory, el.key)}>{el.value}</button>
-          )
+          categories.map((el: CategoryDataInterface) => {
+            return <button onClick={() => {selectCategory(el.key)}} key={el.key} className={buttonNavigationClass(activeCategory, el.key)}>{el.value}</button>
+          })
         }
       </nav>
     </header>
@@ -50,8 +51,11 @@ const mapStateToProps = (state: StoreType) => ({
   categories: getCategoriesSelector(state),
   activeCategory: getActiveCategory(state)
 })
+const selectCategory = (value: string) => ({ type: SelectCategoryAction, payload: value })
 
-const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({}, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
+  selectCategory
+}, dispatch);
 
 export default connect(
   mapStateToProps,
