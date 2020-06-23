@@ -4,19 +4,17 @@ import Game from "../Game/Game";
 import Spinner from "../Spinner/Spinner";
 import {connect} from "react-redux";
 import {bindActionCreators, Dispatch} from "redux";
-import fetchJackpots from "./services/fetch-jackpots";
-import fetchGames from "./services/fetch-games";
+import fetchGamesAndJackPots from "./services/fetch-games-and-jack-pots";
 import {getGamesSelector} from "../../redux/Game/selectors";
 import {StoreType} from "../../redux/store.type";
 import {GameStateInterface} from "../../redux/Game/types/game-state.interface";
 
-const MainContainer = (props: { fetchJackpots: Function, fetchGames: Function , gameStore: GameStateInterface}) => {
-  const {fetchJackpots, fetchGames, gameStore} = props;
+const MainContainer = (props: {fetchGames: Function , gameStore: GameStateInterface}) => {
+  const {fetchGames, gameStore} = props;
 
   useEffect(() => {
     fetchGames();
-    fetchJackpots();
-  }, [fetchGames, fetchJackpots]);
+  }, [fetchGames]);
 
   return (
     <div className="Main-Container">
@@ -41,8 +39,7 @@ const mapStateToProps = (state: StoreType) => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
-  fetchJackpots: fetchJackpots,
-  fetchGames: fetchGames,
+  fetchGames: fetchGamesAndJackPots,
 }, dispatch)
 
 export default connect(
