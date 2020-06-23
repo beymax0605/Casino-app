@@ -19,6 +19,7 @@ const Game = (props: { game: GameInterface, jackpots: JackpotStateInterface }) =
               <img src={game.image} alt={game.name}/>
               {showJackpot(jackpots.data, game)}
             </div>
+            <div className="Game__play-button"></div>
           </LazyLoad>
       </div>
   );
