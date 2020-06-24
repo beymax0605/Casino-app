@@ -6,7 +6,7 @@ import {getActiveCategory, getCategoriesSelector} from "../../redux/Category/sel
 import {CategoryDataInterface} from "../../redux/Category/types/category-data.interface";
 import {bindActionCreators, Dispatch} from "redux";
 import {SelectCategoryAction} from "../../redux/Category/types/select-category-action.type";
-
+import { Link } from "react-router-dom";
 const Header = (props: { categories: CategoryDataInterface[], activeCategory: string, selectCategory: Function}) => {
   const {categories, activeCategory, selectCategory} = props;
 
@@ -21,11 +21,13 @@ const Header = (props: { categories: CategoryDataInterface[], activeCategory: st
         </button>
       </div>
       <nav className={navigationToggle(navigation)}>
-        {
-          categories.map((el: CategoryDataInterface) => {
-            return <button onClick={() => {selectCategory(el.key)}} key={el.key} className={buttonNavigationClass(activeCategory, el.key)}>{el.value}</button>
-          })
-        }
+          {
+            categories.map((el: CategoryDataInterface) => {
+              return <Link to={"/"+el.key} onClick={() => {selectCategory(el.key)}} key={el.key} className={buttonNavigationClass(activeCategory, el.key)}>
+                {el.value}
+              </Link>
+            })
+          }
       </nav>
     </header>
   );

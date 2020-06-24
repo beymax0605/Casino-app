@@ -31,10 +31,12 @@
         cursor: pointer;
         background: none;
         text-align: center;
+        text-decoration: none;
         color: $color-menu-buttons;
         flex-basis: 50%;
-        padding: 25px 12px;
+        padding: 20px 12px;
         border: none;
+        font-size: 13px;
         &:focus {
           outline: none;
         }

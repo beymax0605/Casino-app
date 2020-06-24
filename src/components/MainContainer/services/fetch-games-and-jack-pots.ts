@@ -3,6 +3,7 @@ import {fetchGamesAction} from "../../../redux/Game/actions/fetch-games-action";
 import {cacheGameAction} from "../../../redux/Game/actions/cache-games-action";
 import {JackpotsAggregate} from "../../../core/aggregate/jackpots.aggregate";
 import {fetchJackpotsAction} from "../../../redux/Jackpot/actions/fetch-jackpots-action";
+import {JackpotInterface} from "../../../core/models/jackpot.interface";
 
 export default function fetchGamesAndJackPots() {
   return async (dispatch: Dispatch) => {
@@ -13,13 +14,16 @@ export default function fetchGamesAndJackPots() {
     let response = await Promise.all(urls.map(url=>fetch(url)));
     let data = await Promise.all(response.map(res => res.json()));
     dispatch(fetchGamesAction(data[0]));
-
-    const dataLength = data[1].length
-    const jackAggregate = new JackpotsAggregate();
-    for (let i = 0; i < dataLength; i++) {
-      jackAggregate[data[1][i].game] = data[1][i];
-    }
-    dispatch(fetchJackpotsAction(jackAggregate));
+    dispatch(fetchJackpotsAction(prepareJackpot(data[1])));
     dispatch(cacheGameAction());
   }
+}
+
+export function prepareJackpot(data: JackpotInterface[]) {
+  const dataLength = data.length;
+  const jackAggregate = new JackpotsAggregate();
+  for (let i = 0; i < dataLength; i++) {
+    jackAggregate[data[i].game] = data[i];
+  }
+  return jackAggregate;
 }
