@@ -9,7 +9,7 @@ import {getJackpotsSelector} from "../../redux/Jackpot/selectors";
 import {JackpotStateInterface} from "../../redux/Jackpot/types/jackpot-state.interface";
 import {JackpotsAggregate} from "../../core/aggregate/jackpots.aggregate";
 
-const Game = (props: { game: GameInterface, jackpots: JackpotStateInterface }) => {
+export const Game = (props: { game: GameInterface, jackpots: JackpotStateInterface }) => {
   const { game, jackpots } = props;
   return (
       <div className="Game">
