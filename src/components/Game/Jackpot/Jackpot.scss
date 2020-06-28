@@ -1,0 +1,15 @@
+@import "../../../style/variables";
+
+.jackpot {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 93%;
+  display: flex;
+  justify-content: center;
+  top: 15px;
+  color: $color-ribon-label-buttons;
+  padding: 3px 0;
+  span {
+    font-weight: bold;
+  }
+}
