@@ -9,10 +9,3 @@ script:
   - npm run build
 after_script: # Upload coverage reports
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  on:
-    branch: master
