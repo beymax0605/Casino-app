@@ -3,7 +3,7 @@ addons:
   sonarcloud:
     organization: "tonimitrevski"
     token:
-      secure: 28b62ac329338c3e8db4e63d8c68b57f69a323e1 # encrypted value of your token
+      secure: UQ9b+gkMNRMWTLjITJGUsRQVUZaW+9yugoFlmCXC9gtNReaEevo7jU5Vup8X8iMNX1X2OxopLRn6TOzcJ5i+9HcXs+VSR5lKU2hC2YaBCdQwYHF0tBSliLNnUhbkJ30brEGn99q9jCT0JE8YhQF/2BvptKIcvsDmEa6grpod2lfalG2B6Du9zHplEGLGTlZwwXA4sfq46rgP0SJ4F6hsgoH8gbymU5ewEWQTryS2wMJHpO/LvJn5EMiKAnzRz4gk67FegWNwb3j/2vXU4O+7jR21Xkcrdbk6e8geG5LzS3Tf6sJlwYITF0EIqZwGXjwO3vJL56p5ey/kuqdxQWxg/rp01cSW5XAXUnCCLNaov/wK6MnF1LP9yeZMeZTP/gU7qGD0o5FaOSWnUieZGE7csGPf1uEVs6fj1Td/8Q1H9jQX/eOuww+lQEMZbjHKFJzVvRM/e5Q8iPW6lWl36Ffm26WuP/hXZmjT+Ofm4pLgec5erP3gw2EfZtV0MvoEPLJ1+RYpPF052TwaP210tZa2sMuFa8AkuCh4LCpWAu+5rauyvChhZn4px41W2hybrHqOgJ+04Jppnv1Ns/OcpP+xjB/ZgvlTumHQLYkuAmvOshBnynxKHCDbWjgp7LYZzhrW9ey04v+criNy1ntJU1Uf44iIRjWok5bGMgv4F2CIzvY= # encrypted value of your token
 node_js:
   - "stable"
 cache:
