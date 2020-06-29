@@ -3,7 +3,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import {connect} from "react-redux";
 import {StoreType} from "../../redux/store.type";
 import {getGamesSelector} from "../../redux/Game/selectors";
-import {GameStateInterface} from "../../redux/Game/types/game-state.interface";
+import {GameStateInterface} from "../../redux/Game/types/game-state-interface";
 import { css } from "@emotion/core";
 import "./Spinner.scss";
 const override = css`

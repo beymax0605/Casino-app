@@ -7,7 +7,7 @@ import {bindActionCreators, Dispatch} from "redux";
 import fetchGamesAndJackPots from "./services/fetch-games-and-jack-pots";
 import {getGamesSelector} from "../../redux/Game/selectors";
 import {StoreType} from "../../redux/store.type";
-import {GameStateInterface} from "../../redux/Game/types/game-state.interface";
+import {GameStateInterface} from "../../redux/Game/types/game-state-interface";
 
 const MainContainer = (props: {fetchGames: Function , gameStore: GameStateInterface}) => {
   const {fetchGames, gameStore} = props;

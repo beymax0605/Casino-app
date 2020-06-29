@@ -1,4 +1,4 @@
-import {GameInterface} from "../../../core/models/game.interface";
+import {GameInterface} from "../../../core/models/game-interface";
 import {allCategories} from "../../Category/reducers/data/initial-state";
 import {StoreType} from "../../store.type";
 

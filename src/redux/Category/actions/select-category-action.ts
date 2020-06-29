@@ -1,4 +1,4 @@
-import {SelectCategoryAction, SelectCategoryActionType} from "../types/select-category-action.type";
+import {SelectCategoryAction, SelectCategoryActionType} from "../types/select-category-action-type";
 
 export function selectCategoryAction(category: string): SelectCategoryActionType {
   return {

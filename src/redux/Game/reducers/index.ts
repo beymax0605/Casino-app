@@ -1,6 +1,6 @@
 import {GamesActionTypes} from "../types";
 import {FetchGamesAction} from "../types/fetch-games-action.type";
-import {GameStateInterface} from "../types/game-state.interface";
+import {GameStateInterface} from "../types/game-state-interface";
 import {CacheGamesAction} from "../types/cache-games-action.type";
 
 const initialState: GameStateInterface = {

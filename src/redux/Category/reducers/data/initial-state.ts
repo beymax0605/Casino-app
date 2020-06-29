@@ -1,5 +1,5 @@
-import {CategoryStateInterface} from "../../types/category-state.interface";
-import {CategoryDataInterface} from "../../types/category-data.interface";
+import {CategoryStateInterface} from "../../types/category-state-interface";
+import {CategoryDataInterface} from "../../types/category-data-interface";
 
 const data: CategoryDataInterface[] = [
   {key: "home", value: "Home"},

@@ -1,5 +1,5 @@
 import {CategoryActionTypes} from "../types/action-types";
-import {SelectCategoryAction} from "../types/select-category-action.type";
+import {SelectCategoryAction} from "../types/select-category-action-type";
 import {initialState} from "./data/initial-state";
 
 const categoryReducer = (state= initialState, action: CategoryActionTypes) => {

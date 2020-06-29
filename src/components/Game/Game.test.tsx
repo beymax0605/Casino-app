@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Game } from "./Game";
 import {JackpotsAggregate} from "../../core/aggregate/jackpots.aggregate";
-import {JackpotStateInterface} from "../../redux/Jackpot/types/jackpot-state.interface";
-import {GameInterface} from "../../core/models/game.interface";
+import {JackpotStateInterface} from "../../redux/Jackpot/types/jackpot-state-interface";
+import {GameInterface} from "../../core/models/game-interface";
 import Ribbon from "./Ribbon/Ribbon";
 import Jackpot from "./Jackpot/Jackpot";
 

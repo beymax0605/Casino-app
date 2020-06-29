@@ -1,12 +1,12 @@
 import React from "react";
 import "./Game.scss";
-import {GameInterface} from "../../core/models/game.interface";
+import {GameInterface} from "../../core/models/game-interface";
 import LazyLoad from 'react-lazyload';
 import Placeholder from "../Placeholder/Placeholder";
 import {connect} from "react-redux";
 import {StoreType} from "../../redux/store.type";
 import {getJackpotsSelector} from "../../redux/Jackpot/selectors";
-import {JackpotStateInterface} from "../../redux/Jackpot/types/jackpot-state.interface";
+import {JackpotStateInterface} from "../../redux/Jackpot/types/jackpot-state-interface";
 import {JackpotsAggregate} from "../../core/aggregate/jackpots.aggregate";
 import Ribbon from "./Ribbon/Ribbon";
 import {Jackpot} from "./Jackpot/Jackpot";

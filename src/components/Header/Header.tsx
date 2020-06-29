@@ -3,9 +3,9 @@ import "./Header.scss";
 import {StoreType} from "../../redux/store.type";
 import {connect} from "react-redux";
 import {getActiveCategory, getCategoriesSelector} from "../../redux/Category/selectors";
-import {CategoryDataInterface} from "../../redux/Category/types/category-data.interface";
+import {CategoryDataInterface} from "../../redux/Category/types/category-data-interface";
 import {bindActionCreators, Dispatch} from "redux";
-import {SelectCategoryAction} from "../../redux/Category/types/select-category-action.type";
+import {SelectCategoryAction} from "../../redux/Category/types/select-category-action-type";
 import { Link } from "react-router-dom";
 const Header = (props: { categories: CategoryDataInterface[], activeCategory: string, selectCategory: Function}) => {
   const {categories, activeCategory, selectCategory} = props;

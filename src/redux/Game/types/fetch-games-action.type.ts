@@ -1,4 +1,4 @@
-import {GameInterface} from "../../../core/models/game.interface";
+import {GameInterface} from "../../../core/models/game-interface";
 export const FetchGamesAction = 'FetchGamesAction';
 
 export type FetchGamesAction = {

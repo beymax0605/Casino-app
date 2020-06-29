@@ -10,9 +10,9 @@ import MainContainer from "../../components/MainContainer/MainContainer";
 import {StoreType} from "../../redux/store.type";
 import {getCategoriesSelector} from "../../redux/Category/selectors";
 import {connect} from "react-redux";
-import {CategoryDataInterface} from "../../redux/Category/types/category-data.interface";
+import {CategoryDataInterface} from "../../redux/Category/types/category-data-interface";
 import {bindActionCreators, Dispatch} from "redux";
-import {SelectCategoryAction} from "../../redux/Category/types/select-category-action.type";
+import {SelectCategoryAction} from "../../redux/Category/types/select-category-action-type";
 
 export function SiteRouter(props: { categories: CategoryDataInterface[], selectCategory: Function}) {
   const {categories, selectCategory} = props;
