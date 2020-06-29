@@ -8,3 +8,4 @@ Open <a href="http://casino-web-example.s3-website-eu-west-1.amazonaws.com/" tar
 
 ### Design
 ![alt text](https://casino-api-example.s3-eu-west-1.amazonaws.com/design.png)
+
