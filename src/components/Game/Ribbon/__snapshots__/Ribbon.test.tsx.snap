@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ribbon Component Test Ribbon component 1`] = `
+<div
+  className="ribbon"
+>
+  <span
+    className="ribbon__label"
+  >
+    test
+  </span>
+</div>
+`;
