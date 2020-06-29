@@ -2,7 +2,7 @@
 @import "../../style/variables";
 
 .Game {
-  flex-basis: 50%;
+  flex-basis: 100%;
   padding: 10px;
   position: relative;
   &__container {
@@ -12,6 +12,9 @@
   }
   img {
     width: 100%;
+  }
+  @include small {
+    flex-basis: 50%;
   }
   @include medium {
     flex-basis: 33%;

@@ -5,7 +5,9 @@ export const Jackpot = (props : { amount: number }) => {
   const { amount } = props;
   return (
     <div className="jackpot">
-      <span>{currencyFormat(amount)}</span>
+      <div className="jackpot__container">
+        <span className="amount">{currencyFormat(amount)}</span>
+      </div>
     </div>
   );
 }

@@ -15,7 +15,7 @@ export const Game = (props: { game: GameInterface, jackpots: JackpotStateInterfa
   const { game, jackpots } = props;
   return (
       <div className="Game">
-          <LazyLoad once={true} offset={100} height={150} debounce={200} placeholder={<Placeholder/>}>
+          <LazyLoad once={true} offset={100} height={150} placeholder={<Placeholder/>}>
             <div className="Game__container">
               {showNewRibbon(game)}
               <img src={game.image} alt={game.name}/>

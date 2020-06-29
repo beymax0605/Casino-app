@@ -35,12 +35,14 @@ describe("Game Component", () => {
   test('Ribbon new is showing', () => {
     game.categories = ["new"];
     const wrapper = shallow(<Game jackpots={jackpotMock} game={game} />);
+    expect(wrapper).toMatchSnapshot();
     expect(wrapper.find(Ribbon).length).toBe(1);
   });
 
   test('Jackpot is showing', () => {
     jackpotMock.data["test"] = { game: "test", amount: 1000 };
     const wrapper = shallow(<Game jackpots={jackpotMock} game={game} />);
+    expect(wrapper).toMatchSnapshot();
     expect(wrapper.find(Jackpot).length).toBe(1);
   });
 });

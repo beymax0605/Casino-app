@@ -3,7 +3,8 @@
 .loading {
   position: absolute;
   top: 50%;
-  left: 43%;
+  left: 50%;
+  margin-left: -75px;
   z-index: $z-index-loader;
 }
 

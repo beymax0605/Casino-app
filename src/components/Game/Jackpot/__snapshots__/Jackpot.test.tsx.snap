@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jackpot Component Test Jackpot component 1`] = `
+<div
+  className="jackpot"
+>
+  <div
+    className="jackpot__container"
+  >
+    <span
+      className="amount"
+    >
+      £1,000.00
+    </span>
+  </div>
+</div>
+`;
