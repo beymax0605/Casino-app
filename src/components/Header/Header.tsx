@@ -53,10 +53,10 @@ const mapStateToProps = (state: StoreType) => ({
   categories: getCategoriesSelector(state),
   activeCategory: getActiveCategory(state)
 })
-const selectCategory = (value: string) => ({ type: SelectCategoryAction, payload: value })
+const selectCategoryAction = (value: string) => ({ type: SelectCategoryAction, payload: value })
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
-  selectCategory
+  selectCategory: selectCategoryAction
 }, dispatch);
 
 export default connect(

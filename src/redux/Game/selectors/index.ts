@@ -1,4 +1,4 @@
 import {StoreType} from "../../store.type";
-import getGameSelector from "./get-games.selector";
+import getGameSelector from "./getGameSelector";
 
 export const getGamesSelector = (state: StoreType) => getGameSelector(state);

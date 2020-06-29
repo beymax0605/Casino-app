@@ -24,14 +24,14 @@ const MainContainer = (props: {fetchGames: Function , gameStore: GameStateInterf
   );
 }
 
-function renderGames(game: GameStateInterface): JSX.Element | JSX.Element[] {
+function renderGames(game: GameStateInterface): JSX.Element[] {
   const gamesCount = game.data.length;
-  let renderGames = [];
+  let renderGamesArray = [];
   for (let i = 0; i < gamesCount; i++) {
-    renderGames.push(<Game game={game.data[i]} key={i} />);
+    renderGamesArray.push(<Game game={game.data[i]} key={i} />);
   }
 
-  return renderGames;
+  return renderGamesArray;
 }
 
 const mapStateToProps = (state: StoreType) => ({
