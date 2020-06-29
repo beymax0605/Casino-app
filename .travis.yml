@@ -3,7 +3,7 @@ addons:
   sonarcloud:
     organization: "tonimitrevski"
     token:
-      secure: $sonar_cloud # encrypted value of your token
+      secure: 28b62ac329338c3e8db4e63d8c68b57f69a323e1 # encrypted value of your token
 node_js:
   - "stable"
 cache:
