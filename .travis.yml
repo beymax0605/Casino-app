@@ -1,4 +1,9 @@
 language: node_js
+addons:
+  sonarcloud:
+    organization: "tonimitrevski"
+    token:
+      secure: $sonar_cloud # encrypted value of your token
 node_js:
   - "stable"
 cache:
@@ -7,5 +12,7 @@ cache:
 script:
   - npm run coverage # Include coverage when running tests
   - npm run build
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - sonar-scanner
 after_script: # Upload coverage reports
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
