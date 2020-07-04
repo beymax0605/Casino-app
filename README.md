@@ -16,14 +16,14 @@ In progress ....
 ### Development
 #### Instal npm modules
 ```
-npm start
+npm install
 ```
 #### Development
 ```
-npm start
+npm run dev
 ```
 #### Production build
 ```
-npm install
+npm run build
 ```
 

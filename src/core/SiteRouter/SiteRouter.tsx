@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -17,7 +16,7 @@ import {SelectCategoryAction} from "../../redux/Category/types/select-category-a
 export function SiteRouter(props: { categories: CategoryDataInterface[], selectCategory: Function}) {
   const {categories, selectCategory} = props;
   return (
-    <Router>
+    <>
       <Route
         exact
         path="/"
@@ -30,7 +29,7 @@ export function SiteRouter(props: { categories: CategoryDataInterface[], selectC
         <Switch>
           <Route path="/:id" children={<Child categories={categories} selectCategory={selectCategory}/>} />
         </Switch>
-    </Router>
+    </>
   );
 }
 

@@ -9,7 +9,7 @@ import {getGamesSelector} from "../../redux/Game/selectors";
 import {StoreType} from "../../redux/store.type";
 import {GameStateInterface} from "../../redux/Game/types/game-state-interface";
 
-const MainContainer = (props: {fetchGames: Function , gameStore: GameStateInterface}) => {
+export const MainContainer = (props: {fetchGames: Function , gameStore: GameStateInterface}) => {
   const {fetchGames, gameStore} = props;
 
   useEffect(() => {
