@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-import {connect} from "react-redux";
-import {StoreType} from "../../redux/store.type";
-import {getGamesSelector} from "../../redux/Game/selectors";
-import {GameStateInterface} from "../../redux/Game/types/game-state-interface";
+
 import { css } from "@emotion/core";
 import "./Spinner.scss";
 const override = css`
@@ -12,12 +9,12 @@ const override = css`
     border-bottom-color: transparent;
 `;
 
-const Spinner = (props: {gameStore: GameStateInterface}) => {
-  const {gameStore} = props;
+export const Spinner = (props: {pending: boolean}) => {
+  const {pending} = props;
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(gameStore.pending), 1000);
-  }, [gameStore.pending]); // Only re-run the effect if count changes
+    setTimeout(() => setLoading(pending), 1000);
+  }, [pending]); // Only re-run the effect if count changes
   return (
     <div className="loading">
       <ClipLoader
@@ -29,10 +26,4 @@ const Spinner = (props: {gameStore: GameStateInterface}) => {
   );
 }
 
-const mapStateToProps = (state: StoreType) => ({
-  gameStore: getGamesSelector(state)
-})
-
-export default connect(
-  mapStateToProps
-)(Spinner);
+export default Spinner;

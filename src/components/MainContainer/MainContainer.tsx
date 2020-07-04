@@ -18,7 +18,7 @@ export const MainContainer = (props: {fetchGames: Function , gameStore: GameStat
 
   return (
     <div className="Main-Container">
-      <Spinner/>
+      <Spinner pending={gameStore.pending}/>
       {renderGames(gameStore)}
     </div>
   );
