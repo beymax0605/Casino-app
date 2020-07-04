@@ -13,52 +13,30 @@ describe("SiteRouter", () => {
   });
 
   test('category exist', () => {
-    const routeKey = "test";
-    const selectCategory = (category: string) => expect(category).toBe(routeKey);
-    const categories = [{key: routeKey, value: "test"}]
-
-    const history = createMemoryHistory();
-    history.push(routeKey)
-    render(
-      <Router history={history}>
-        <SiteRouter categories={categories} selectCategory={selectCategory}  />
-      </Router >,
-      root
-    );
-    expect(history.location.pathname).toBe('/'+routeKey);
+    expected("test", '/test');
   });
 
   test('trigger defauult route "/", go to "home" route', () => {
-    const homeRoute = "home";
-    const selectCategory = (category: string) => expect(category).toBe(homeRoute);
-    const categories = [{key: homeRoute, value: homeRoute}]
-
-    const history = createMemoryHistory();
-    history.push('/')
-    render(
-      <Router history={history}>
-        <SiteRouter categories={categories} selectCategory={selectCategory}  />
-      </Router >,
-      root
-    );
-    expect(history.location.pathname).toBe('/'+homeRoute);
+    expected("home", '/');
   });
 
 
   test('route not exist, go to "home" route', () => {
-    const homeRoute = "home";
-    const selectCategory = (category: string) => expect(category).toBe(homeRoute);
-    const categories = [{key: homeRoute, value: homeRoute}]
-
-    const history = createMemoryHistory();
-    history.push('/notExistRoute')
-    render(
-      <Router history={history}>
-        <SiteRouter categories={categories} selectCategory={selectCategory}  />
-      </Router >,
-      root
-    );
-    expect(history.location.pathname).toBe('/'+homeRoute);
+    expected("home", '/notExistRoute');
   });
 
+  function expected(routeExist: string, triggerRoute: string) {
+    const selectCategory = (category: string) => expect(category).toBe(routeExist);
+    const categories = [{key: routeExist, value: routeExist}]
+
+    const history = createMemoryHistory();
+    history.push(triggerRoute)
+    render(
+      <Router history={history}>
+        <SiteRouter categories={categories} selectCategory={selectCategory}/>
+      </Router>,
+      root
+    );
+    expect(history.location.pathname).toBe('/' + routeExist);
+  }
 });
