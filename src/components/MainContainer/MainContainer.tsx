@@ -4,7 +4,7 @@ import Game from "../Game/Game";
 import Spinner from "../Spinner/Spinner";
 import {connect} from "react-redux";
 import {bindActionCreators, Dispatch} from "redux";
-import fetchGamesAndJackPots from "./services/fetch-games-and-jack-pots";
+import fetchGamesAndJackPots from "../../redux/Services/fetch-games-and-jack-pots/fetch-games-and-jack-pots";
 import {getGamesSelector} from "../../redux/Game/selectors";
 import {StoreType} from "../../redux/store.type";
 import {GameStateInterface} from "../../redux/Game/types/game-state-interface";

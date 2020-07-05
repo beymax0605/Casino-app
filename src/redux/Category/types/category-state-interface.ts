@@ -1,6 +1,6 @@
-import {CategoryDataInterface} from "./category-data-interface";
+import {CategoryInterface} from "../../../core/models/category-interface";
 
 export interface CategoryStateInterface {
-  data: Array<CategoryDataInterface>
+  data: Array<CategoryInterface>
   selected: string
 }

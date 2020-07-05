@@ -9,11 +9,11 @@ import MainContainer from "../../components/MainContainer/MainContainer";
 import {StoreType} from "../../redux/store.type";
 import {getCategoriesSelector} from "../../redux/Category/selectors";
 import {connect} from "react-redux";
-import {CategoryDataInterface} from "../../redux/Category/types/category-data-interface";
+import {CategoryInterface} from "../models/category-interface";
 import {bindActionCreators, Dispatch} from "redux";
 import {SelectCategoryAction} from "../../redux/Category/types/select-category-action-type";
 
-export function SiteRouter(props: { categories: CategoryDataInterface[], selectCategory: Function}) {
+export function SiteRouter(props: { categories: CategoryInterface[], selectCategory: Function}) {
   const {categories, selectCategory} = props;
   return (
     <>
@@ -33,7 +33,7 @@ export function SiteRouter(props: { categories: CategoryDataInterface[], selectC
   );
 }
 
-function Child(props: { categories: CategoryDataInterface[], selectCategory: Function}) {
+function Child(props: { categories: CategoryInterface[], selectCategory: Function}) {
   const {categories, selectCategory} = props;
   // We can use the `useParams` hook here to access
   // the dynamic pieces of the URL.

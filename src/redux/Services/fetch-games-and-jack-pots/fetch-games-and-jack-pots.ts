@@ -1,8 +1,8 @@
 import {Dispatch} from "redux";
-import {fetchGamesAction} from "../../../redux/Game/actions/fetch-games-action";
-import {cacheGameAction} from "../../../redux/Game/actions/cache-games-action";
+import {fetchGamesAction} from "../../Game/actions/fetch-games-action";
+import {cacheGameAction} from "../../Game/actions/cache-games-action";
 import {JackpotsAggregate} from "../../../core/aggregate/jackpots.aggregate";
-import {fetchJackpotsAction} from "../../../redux/Jackpot/actions/fetch-jackpots-action";
+import {fetchJackpotsAction} from "../../Jackpot/actions/fetch-jackpots-action";
 import {JackpotInterface} from "../../../core/models/jackpot-interface";
 
 export default function fetchGamesAndJackPots() {

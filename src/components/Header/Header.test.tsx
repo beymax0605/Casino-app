@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {CategoryDataInterface} from "../../redux/Category/types/category-data-interface";
+import {CategoryInterface} from "../../core/models/category-interface";
 import {Header} from "./Header";
 import {Link} from "react-router-dom";
 
 describe("Game Component", () => {
-  let categories: CategoryDataInterface[], activeCategory: string, selectCategory: any;
+  let categories: CategoryInterface[], activeCategory: string, selectCategory: any;
   beforeEach(() => {
     selectCategory = jest.fn();
     categories = [{key: "test", value: "test"}, {key: "test2", value: "test2"}];

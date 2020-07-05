@@ -3,11 +3,11 @@ import "./Header.scss";
 import {StoreType} from "../../redux/store.type";
 import {connect} from "react-redux";
 import {getActiveCategory, getCategoriesSelector} from "../../redux/Category/selectors";
-import {CategoryDataInterface} from "../../redux/Category/types/category-data-interface";
+import {CategoryInterface} from "../../core/models/category-interface";
 import {bindActionCreators, Dispatch} from "redux";
 import {SelectCategoryAction} from "../../redux/Category/types/select-category-action-type";
 import { Link } from "react-router-dom";
-export const Header = (props: { categories: CategoryDataInterface[], activeCategory: string, selectCategory: Function}) => {
+export const Header = (props: { categories: CategoryInterface[], activeCategory: string, selectCategory: Function}) => {
   const {categories, activeCategory, selectCategory} = props;
 
   const [navigation, setNavigation] = useState(false);
@@ -22,7 +22,7 @@ export const Header = (props: { categories: CategoryDataInterface[], activeCateg
       </div>
       <nav className={navigationToggle(navigation)}>
           {
-            categories.map((el: CategoryDataInterface) => {
+            categories.map((el: CategoryInterface) => {
               return <Link to={"/"+el.key} onClick={() => {selectCategory(el.key)}} key={el.key} className={buttonNavigationClass(activeCategory, el.key)}>
                 {el.value}
               </Link>

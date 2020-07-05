@@ -1,7 +1,7 @@
 import {CategoryStateInterface} from "../../types/category-state-interface";
-import {CategoryDataInterface} from "../../types/category-data-interface";
+import {CategoryInterface} from "../../../../core/models/category-interface";
 
-const data: CategoryDataInterface[] = [
+const data: CategoryInterface[] = [
   {key: "home", value: "Home"},
   {key: "new", value: "New Games"},
   {key: "slots", value: "Slots"},
