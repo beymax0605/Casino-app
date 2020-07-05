@@ -7,7 +7,7 @@ import {CategoryDataInterface} from "../../redux/Category/types/category-data-in
 import {bindActionCreators, Dispatch} from "redux";
 import {SelectCategoryAction} from "../../redux/Category/types/select-category-action-type";
 import { Link } from "react-router-dom";
-const Header = (props: { categories: CategoryDataInterface[], activeCategory: string, selectCategory: Function}) => {
+export const Header = (props: { categories: CategoryDataInterface[], activeCategory: string, selectCategory: Function}) => {
   const {categories, activeCategory, selectCategory} = props;
 
   const [navigation, setNavigation] = useState(false);
