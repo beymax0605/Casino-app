@@ -2,6 +2,7 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tonimitrevski_casino&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=tonimitrevski_casino)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tonimitrevski_casino&metric=alert_status)](https://sonarcloud.io/dashboard?id=tonimitrevski_casino)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tonimitrevski_casino&metric=coverage)](https://sonarcloud.io/dashboard?id=tonimitrevski_casino)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=tonimitrevski_casino&metric=ncloc)](https://sonarcloud.io/dashboard?id=tonimitrevski_casino)
 
 # Casino app
 ## Web aplication build in React and Redux
