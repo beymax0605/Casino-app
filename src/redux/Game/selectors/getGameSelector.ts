@@ -1,5 +1,5 @@
 import {GameInterface} from "../../../core/models/game-interface";
-import {allCategories} from "../../Category/reducers/data/initial-state";
+import {allCategories} from "../../Category/reducers/data/initial-state-select-category";
 import {StoreType} from "../../store.type";
 
 let cachedGames = new Map<string, GameInterface[]>();

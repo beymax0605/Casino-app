@@ -1,8 +1,8 @@
 import {CategoryActionTypes} from "../types/action-types";
 import {SelectCategoryAction} from "../types/select-category-action-type";
-import {initialState} from "./data/initial-state";
+import {initialStateSelectCategory} from "./data/initial-state-select-category";
 
-const categoryReducer = (state= initialState, action: CategoryActionTypes) => {
+const categoryReducer = (state= initialStateSelectCategory, action: CategoryActionTypes) => {
   switch (action.type) {
     case SelectCategoryAction: {
       return {

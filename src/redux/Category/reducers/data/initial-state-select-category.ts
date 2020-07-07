@@ -1,7 +1,7 @@
 import {CategoryStateInterface} from "../../types/category-state-interface";
 import {CategoryInterface} from "../../../../core/models/category-interface";
 
-const data: CategoryInterface[] = [
+export const categoryData: CategoryInterface[] = [
   {key: "home", value: "Home"},
   {key: "new", value: "New Games"},
   {key: "slots", value: "Slots"},
@@ -17,7 +17,7 @@ const data: CategoryInterface[] = [
 export const allCategories: Array<string> = ["home", "new", "slots", "jackpots", "live", "blackjack", "roulette", "table", "poker"]
 
 
-export const initialState: CategoryStateInterface = {
-  data: data,
+export const initialStateSelectCategory: CategoryStateInterface = {
+  data: categoryData,
   selected: "home"
 };
