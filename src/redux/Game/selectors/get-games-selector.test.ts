@@ -2,9 +2,9 @@ import * as data from "./get-games-selector/prepare-game-data";
 import {JackpotsAggregate} from "../../../core/aggregate/jackpots.aggregate";
 import {initialStateSelectCategory} from "../../Category/reducers/data/initial-state-select-category";
 import {StoreType} from "../../store.type";
-import getGames from "./get-games";
 import {mockGames} from "./get-games-selector.test/mock-games";
 import {GameStateInterface} from "../types/game-state-interface";
+import getGamesSelector from "./get-games-selector";
 describe('get-games-selector', () => {
   let gamesState: GameStateInterface;
   beforeEach(() => {
@@ -30,14 +30,14 @@ describe('get-games-selector', () => {
     });
     it('cache is not set, call prepareGameData', () => {
       prepareGameDataSpy = jest.spyOn(data, 'prepareGameData');
-      getGames(store);
+      getGamesSelector(store);
       // @ts-ignore
       expect(prepareGameDataSpy).toHaveBeenCalled();
     })
     it('cache is set, not call prepareGameData', () => {
       prepareGameDataSpy = jest.spyOn(data, 'prepareGameData');
       store.games.cache = true;
-      getGames(store);
+      getGamesSelector(store);
       // @ts-ignore
       expect(prepareGameDataSpy).not.toHaveBeenCalled();
     })

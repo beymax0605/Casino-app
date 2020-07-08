@@ -5,9 +5,9 @@ import Spinner from "../Spinner/Spinner";
 import {connect} from "react-redux";
 import {bindActionCreators, Dispatch} from "redux";
 import fetchGamesAndJackPots from "../../redux/Services/fetch-games-and-jack-pots/fetch-games-and-jack-pots";
-import {getGamesSelector} from "../../redux/Game/selectors";
 import {StoreType} from "../../redux/store.type";
 import {GameStateInterface} from "../../redux/Game/types/game-state-interface";
+import getGamesSelector from "../../redux/Game/selectors/get-games-selector";
 
 export const MainContainer = (props: {fetchGames: Function , gameStore: GameStateInterface}) => {
   const {fetchGames, gameStore} = props;

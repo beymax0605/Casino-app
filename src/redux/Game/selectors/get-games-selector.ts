@@ -1,10 +1,9 @@
-import {GameInterface} from "../../../core/models/game-interface";
 import {StoreType} from "../../store.type";
-import {prepareGameData} from "./get-games-selector/prepare-game-data";
 import {GameStateInterface} from "../types/game-state-interface";
+import {GameInterface} from "../../../core/models/game-interface";
+import {prepareGameData} from "./get-games-selector/prepare-game-data";
 let cachedGames = new Map<string, GameInterface[]>();
-
-export default function getGames(state: StoreType): GameStateInterface {
+export default function getGamesSelector(state: StoreType): GameStateInterface {
   const selectCategory  = state.categories.selected;
 
   if(state.games.cache) {
