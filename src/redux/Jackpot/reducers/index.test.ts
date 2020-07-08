@@ -1,10 +1,11 @@
 import reducer, {jackpotInitialState} from './index'
 import {JackpotsAggregate} from "../../../core/aggregate/jackpots.aggregate";
 import {FetchJackpotAction} from "../types/fetch-jackpot-action.type";
+import {JackpotActionTypes} from "../types";
 
 describe("select-category-action", () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual(jackpotInitialState);
+    expect(reducer(undefined, {} as JackpotActionTypes)).toEqual(jackpotInitialState);
   })
 
   it('should handle add jackpots', () => {
