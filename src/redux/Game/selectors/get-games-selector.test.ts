@@ -2,7 +2,7 @@ import * as data from "./get-games-selector/prepare-game-data";
 import {JackpotsAggregate} from "../../../core/aggregate/jackpots.aggregate";
 import {initialStateSelectCategory} from "../../Category/reducers/data/initial-state-select-category";
 import {StoreType} from "../../store.type";
-import {mockGames} from "./get-games-selector.test/mock-games";
+import {mockGames} from "../mock/mock-games";
 import {GameStateInterface} from "../types/game-state-interface";
 import getGamesSelector from "./get-games-selector";
 describe('get-games-selector', () => {
