@@ -50,10 +50,11 @@ function setOtherGamesWhichCategoryDoesntExist(cachedGames: Map<string, GameInte
     const length = game.categories.length;
     for (let i = 0; i < length; i++) {
       if (allCategories.includes(game.categories[i])) {
-        return false;
+        continue;
       }
+      return true;
     }
-    return true;
+    return false;
   }));
 }
 

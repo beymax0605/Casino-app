@@ -2,7 +2,7 @@
 export const mockGames = [
   {
     "categories": [
-      "top",
+      "table",
       "slots",
       "new"
     ],
@@ -12,7 +12,7 @@ export const mockGames = [
   },
   {
     "categories": [
-      "top",
+      "table",
       "slots",
       "new",
       "categoryNotExist"
@@ -23,7 +23,7 @@ export const mockGames = [
   },
   {
     "categories": [
-      "top",
+      "table",
       "slots",
       "new"
     ],
@@ -33,7 +33,7 @@ export const mockGames = [
   },
   {
     "categories": [
-      "top",
+      "table",
       "slots",
       "new"
     ],
@@ -43,7 +43,7 @@ export const mockGames = [
   },
   {
     "categories": [
-      "top",
+      "table",
       "slots",
       "new"
     ],

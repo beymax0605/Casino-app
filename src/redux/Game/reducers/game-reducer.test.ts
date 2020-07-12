@@ -29,6 +29,17 @@ describe('game reducer', () => {
         cache: true
       });
   })
+
+  it('action Not exist return the same state', () => {
+    expect(gameReducer(
+      returnGameStateNotCached(),
+      {
+        // @ts-ignore
+        type: 'Not Exist',
+      }
+    ))
+      .toEqual(returnGameStateNotCached());
+  })
 });
 
 function returnGameStateNotCached() {
