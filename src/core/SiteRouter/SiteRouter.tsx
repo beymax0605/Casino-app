@@ -39,7 +39,7 @@ function Child(props: { categories: CategoryInterface[], selectCategory: Functio
   // the dynamic pieces of the URL.
   let { id } = useParams();
   if(!categories.some(category => category.key === id)) {
-    return <Redirect to="/home" />
+    return <Redirect to="home" />
   }
   selectCategory(id);
   return <MainContainer/>;
