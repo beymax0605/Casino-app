@@ -9,6 +9,8 @@
 
 ### Link
 Open <a href="http://casino-web-example.s3-website-eu-west-1.amazonaws.com/" target="_blank">http://casino-web-example.s3-website-eu-west-1.amazonaws.com/</a>
+<br/>
+Or : <a href="http://casino-web-example.s3-website-eu-west-1.amazonaws.com/" target="_blank">https://tonimitrevski.github.io/home</a>
 
 ### Design
 ![alt text](https://casino-api-example.s3-eu-west-1.amazonaws.com/design.png)
