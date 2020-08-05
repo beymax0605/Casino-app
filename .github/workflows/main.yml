@@ -37,9 +37,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
         SOURCE_DIR: "build"
-      - name: Deploy to Github Pages
-          uses: JamesIves/github-pages-deploy-action@3.5.9
-            with:
-              GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
-              BRANCH: gh-pages # The branch the action should deploy to.
-              FOLDER: / # The folder the action should deploy.
+    - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@3.5.9
+          with:
+            GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+            BRANCH: gh-pages # The branch the action should deploy to.
+            FOLDER: / # The folder the action should deploy.
