@@ -8,9 +8,7 @@
 ## Web aplication build in React and Redux
 
 ### Link
-Open [![http://casino-web-example.s3-website-eu-west-1.amazonaws.com/](http://casino-web-example.s3-website-eu-west-1.amazonaws.com/)](http://casino-web-example.s3-website-eu-west-1.amazonaws.com/)
-<br/>
-Or : [![https://tonimitrevski.github.io/casino](https://tonimitrevski.github.io/casino)](https://tonimitrevski.github.io/casino)
+Open <a href="http://casino-web-example.s3-website-eu-west-1.amazonaws.com/" target="_blank">http://casino-web-example.s3-website-eu-west-1.amazonaws.com/</a>
 
 ### Design
 ![alt text](https://casino-api-example.s3-eu-west-1.amazonaws.com/design.png)
