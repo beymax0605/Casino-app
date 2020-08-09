@@ -4,17 +4,27 @@ import {cacheGameAction} from "../../Game/actions/cache-games-action";
 import {JackpotsAggregate} from "../../../core/aggregate/jackpots.aggregate";
 import {fetchJackpotsAction} from "../../Jackpot/actions/fetch-jackpots-action";
 import {JackpotInterface} from "../../../core/models/jackpot-interface";
+import { request } from 'graphql-request'
 
 export default function fetchGamesAndJackPots() {
   return async (dispatch: Dispatch) => {
-    const urls = [
-      "https://nssw02zdf3.execute-api.us-east-1.amazonaws.com/games",
-      "https://nssw02zdf3.execute-api.us-east-1.amazonaws.com/jackpots",
-    ];
-    let response = await Promise.all(urls.map(url=>fetch(url)));
-    let data = await Promise.all(response.map(res => res.json()));
-    dispatch(fetchGamesAction(data[0]));
-    dispatch(fetchJackpotsAction(prepareJackpot(data[1])));
+// Call an external API endpoint to get posts
+    const query = `{
+        jackpots {
+          amount
+          game
+        }
+        games {
+          id
+          categories
+          name
+          image
+        }
+    }`
+
+    let posts = await request('https://pnpap5qx07.execute-api.eu-west-1.amazonaws.com/dev/graphql', query)
+    dispatch(fetchGamesAction(posts.games));
+    dispatch(fetchJackpotsAction(prepareJackpot(posts.jackpots)));
     dispatch(cacheGameAction());
   }
 }
