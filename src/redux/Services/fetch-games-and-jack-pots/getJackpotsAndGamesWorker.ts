@@ -1,4 +1,8 @@
-onmessage = function(e) {
+// @ts-ignore
+// eslint-disable-next-line no-restricted-globals
+let ctx: Worker = self as any;
+// Respond to message from parent thread
+ctx.addEventListener("message", (event) => {
   const query = `{
         jackpots {
           amount
@@ -21,5 +25,5 @@ onmessage = function(e) {
     body: JSON.stringify({query: query})
   })
     .then(r => r.json())
-    .then(data => postMessage(data));
-}
+    .then(data => ctx.postMessage(data));
+});

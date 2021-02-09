@@ -4,6 +4,8 @@ import {cacheGameAction} from "../../Game/actions/cache-games-action";
 import {JackpotsAggregate} from "../../../core/aggregate/jackpots.aggregate";
 import {fetchJackpotsAction} from "../../Jackpot/actions/fetch-jackpots-action";
 import {JackpotInterface} from "../../../core/models/jackpot-interface";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import GetJackpotsAndGamesWorker from "worker-loader!./getJackpotsAndGamesWorker";
 
 export default function fetchGamesAndJackPots() {
   return async (dispatch: Dispatch) => {
@@ -25,12 +27,10 @@ export function prepareJackpot(data: JackpotInterface[]) {
 
 function getDataFromWorker() {
   return new Promise( (resolutionFunc, rejectionFunc) => {
-    const myWorker = new Worker('getJackpotsAndGamesWorker.js', {
-      type: 'module'
-    })
-    myWorker.postMessage('run request');
-    myWorker.onmessage = function (e) {
-      resolutionFunc(e.data.data);
-    }
+    const worker = new GetJackpotsAndGamesWorker();
+    worker.postMessage('run request');
+    worker.onmessage = (event) => {
+      resolutionFunc(event.data.data);
+    };
   });
 }
