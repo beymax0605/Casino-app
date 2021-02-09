@@ -5,6 +5,7 @@ exports[`Game Component Jackpot is showing 1`] = `
   className="Game"
 >
   <LazyLoad
+    classNamePrefix="lazyload"
     height={150}
     offset={100}
     once={true}
@@ -37,6 +38,7 @@ exports[`Game Component Ribbon new is showing 1`] = `
   className="Game"
 >
   <LazyLoad
+    classNamePrefix="lazyload"
     height={150}
     offset={100}
     once={true}
@@ -69,6 +71,7 @@ exports[`Game Component should test Game component 1`] = `
   className="Game"
 >
   <LazyLoad
+    classNamePrefix="lazyload"
     height={150}
     offset={100}
     once={true}
