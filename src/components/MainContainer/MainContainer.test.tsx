@@ -3,7 +3,7 @@ import {mount, shallow} from 'enzyme';
 import {GameStateInterface} from "../../redux/Game/types/game-state-interface";
 import Game from "../Game/Game";
 import {MainContainer} from "./MainContainer";
-
+jest.mock("./../../redux/Services/fetch-games-and-jack-pots/getDataFromWorker.ts")
 
 describe("MainContainer Component", () => {
   test('should show spinner if data is empty', () => {

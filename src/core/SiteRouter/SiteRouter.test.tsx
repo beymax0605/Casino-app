@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import { render } from "react-dom";
 import { Router } from "react-router";
 jest.mock('./../../components/MainContainer/MainContainer')
-
+jest.mock("./../../redux/Services/fetch-games-and-jack-pots/getDataFromWorker.ts")
 describe("SiteRouter", () => {
   let root: HTMLDivElement;
   beforeEach(() => {
