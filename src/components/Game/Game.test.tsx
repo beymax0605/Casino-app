@@ -6,8 +6,9 @@ import {JackpotStateInterface} from "../../redux/Jackpot/types/jackpot-state-int
 import {GameInterface} from "../../core/models/game-interface";
 import Ribbon from "./Ribbon/Ribbon";
 import Jackpot from "./Jackpot/Jackpot";
-const flushPromises = () => new Promise(setImmediate);
-jest.mock("./../../core/services/fetch-image.worker.ts")
+import { render, screen, fireEvent, wait } from '@testing-library/react';
+import {forceVisible} from "react-lazyload";
+jest.mock("../../core/services/fetch-image.worker")
 describe("Game Component", () => {
   let jackpotMock: JackpotStateInterface;
   let game: GameInterface;
@@ -24,36 +25,37 @@ describe("Game Component", () => {
   });
 
   test('should test Game component', async () => {
-    const wrapper = shallow(<Game jackpots={jackpotMock} game={game} />);
-    wrapper.setProps({ image: imgUrl });
-    setTimeout(() => {
-      expect(wrapper.find('.Game__play-button').length).toBe(1);
-      expect(wrapper.find('.Game__container').length).toBe(1);
-      expect(wrapper.find("img").prop("src")).toEqual(imgUrl);
-      expect(wrapper.find(Ribbon).length).toBe(0);
-      expect(wrapper.find(Jackpot).length).toBe(0);
-      expect(wrapper).toMatchSnapshot();
-    }, 0);
+    const { container, asFragment  } = render(<Game jackpots={jackpotMock} game={game} />)
+    await wait(() => {
+      forceVisible();
+      expect(container.getElementsByClassName('Game__play-button').length).toBe(1);
+      expect(container.getElementsByClassName('Game__container').length).toBe(1);
+      expect(screen.getByTestId("image").getAttribute('src')).toBe(imgUrl);
+      expect(container.querySelector('Ribbon')).toBeNull();
+      expect(container.querySelector('Jackpot')).toBeNull();
+      expect(asFragment()).toMatchSnapshot();
+    });
   });
 
   test('Ribbon new is showing', async () => {
     game.categories = ["new"];
-    const wrapper = shallow(<Game jackpots={jackpotMock} game={game} />);
-    wrapper.setProps({ image: imgUrl });
-    setTimeout(() => {
-      expect(wrapper).toMatchSnapshot();
-      expect(wrapper.find(Ribbon).length).toBe(1);
-    }, 0);
+    const { container, asFragment  } = render(<Game jackpots={jackpotMock} game={game} />)
+    await wait(() => {
+      forceVisible();
+      expect(container.querySelector('Ribbon')).toBeDefined()
+      expect(asFragment()).toMatchSnapshot();
+    });
   });
 
   test('Jackpot is showing', async () => {
     jackpotMock.data["test"] = { game: "test", amount: 1000 };
-    const wrapper = shallow(<Game jackpots={jackpotMock} game={game} />);
-    wrapper.setProps({ image: imgUrl });
-    setTimeout(() => {
-      expect(wrapper).toMatchSnapshot();
-      expect(wrapper.find(Jackpot).length).toBe(1);
-    }, 0);
+
+    const { container, asFragment  } = render(<Game jackpots={jackpotMock} game={game} />)
+    await wait(() => {
+      forceVisible();
+      expect(container.querySelector('Jackpot')).toBeDefined()
+      expect(asFragment()).toMatchSnapshot();
+    });
   });
 });
 

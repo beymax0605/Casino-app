@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game Component Jackpot is showing 1`] = `<Fragment />`;
+
+exports[`Game Component Ribbon new is showing 1`] = `<Fragment />`;
+
+exports[`Game Component should test Game component 1`] = `
+<DocumentFragment>
+  <div
+    class="Game"
+  >
+    <div
+      class="lazyload-wrapper"
+    >
+      <div
+        class="Game__container"
+      >
+        <img
+          alt="Test Game"
+          data-testid="image"
+          src="https://casino-api-example.s3-eu-west-1.amazonaws.com/images/games/BSGHOULSGOLD.jpg"
+        />
+      </div>
+      <div
+        class="Game__play-button"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

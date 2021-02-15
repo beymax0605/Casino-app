@@ -1,3 +1,7 @@
-'use strict';
-
-export default Object.create(null);
+export class FetchImageWorker {
+  public async handle(url: string) {
+    return new Promise( (resolve, rejectionFunc) => {
+        resolve(url);
+    });
+  }
+}

@@ -16,19 +16,19 @@ export const Game = (props: { game: GameInterface, jackpots: JackpotStateInterfa
   const { game, jackpots } = props;
   const [image, setImage] = useState("");
   useEffect(() => {
-    (new FetchImageWorker()).handle(game.image).then(url => {
+    (new FetchImageWorker).handle(game.image).then(url => {
+      console.log(url);
       setImage(url)
     }).catch(e => console.log(e));
   }, [game.image]);
-
   return (
     <>
       {image.length > 0 &&
       <div className="Game">
-        <LazyLoad offset={100} height={150} placeholder={<Placeholder/>}>
+        <LazyLoad once={true} offset={100} height={150} placeholder={<Placeholder/>}>
           <div className="Game__container">
             {showNewRibbon(game)}
-            <img src={image} alt={game.name} onLoad={() => onLoad(image)}/>
+            <img data-testid="image" src={image} alt={game.name} onLoad={() => onLoad(image)}/>
             {showJackpot(jackpots.data, game)}
           </div>
           <div className="Game__play-button"></div>
