@@ -13,7 +13,7 @@ export const Spinner = (props: {pending: boolean}) => {
   const {pending} = props;
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(pending), 1000);
+    setLoading(pending);
   }, [pending]); // Only re-run the effect if count changes
   return (
     <div className="loading">

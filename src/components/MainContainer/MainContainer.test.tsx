@@ -43,7 +43,9 @@ describe("MainContainer Component", () => {
       cache: false
     };
     const wrapper = shallow(<MainContainer fetchGames={fetchGames} gameStore={gameStore}/>);
-    expect(wrapper.find(Game).length).toBe(2);
+    setTimeout(() => {
+      expect(wrapper.find(Game).length).toBe(2);
+    }, 1500);
   });
 });
 

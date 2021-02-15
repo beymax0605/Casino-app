@@ -1,37 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Game Component Jackpot is showing 1`] = `
-<div
-  className="Game"
->
-  <LazyLoad
-    classNamePrefix="lazyload"
-    height={150}
-    offset={100}
-    once={true}
-    overflow={false}
-    placeholder={<Placeholder />}
-    resize={false}
-    scroll={true}
-    unmountIfInvisible={false}
-  >
-    <div
-      className="Game__container"
-    >
-      <img
-        alt="Test Game"
-        src="http://localhost:3000/test2"
-      />
-      <Jackpot
-        amount={1000}
-      />
-    </div>
-    <div
-      className="Game__play-button"
-    />
-  </LazyLoad>
-</div>
-`;
+exports[`Game Component Jackpot is showing 1`] = `<Fragment />`;
 
 exports[`Game Component Ribbon new is showing 1`] = `
 <div
@@ -54,36 +23,6 @@ exports[`Game Component Ribbon new is showing 1`] = `
       <Ribbon
         type="new"
       />
-      <img
-        alt="Test Game"
-        src="http://localhost:3000/test2"
-      />
-    </div>
-    <div
-      className="Game__play-button"
-    />
-  </LazyLoad>
-</div>
-`;
-
-exports[`Game Component should test Game component 1`] = `
-<div
-  className="Game"
->
-  <LazyLoad
-    classNamePrefix="lazyload"
-    height={150}
-    offset={100}
-    once={true}
-    overflow={false}
-    placeholder={<Placeholder />}
-    resize={false}
-    scroll={true}
-    unmountIfInvisible={false}
-  >
-    <div
-      className="Game__container"
-    >
       <img
         alt="Test Game"
         src="http://localhost:3000/test2"
