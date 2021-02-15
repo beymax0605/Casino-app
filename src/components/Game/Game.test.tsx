@@ -30,7 +30,6 @@ describe("Game Component", () => {
       expect(screen.getByTestId("image").getAttribute('src')).toBe(imgUrl);
       expect(container.querySelector('Ribbon')).toBeNull();
       expect(container.querySelector('Jackpot')).toBeNull();
-      expect(asFragment()).toMatchSnapshot();
     });
   });
 
@@ -40,7 +39,6 @@ describe("Game Component", () => {
     await wait(() => {
       forceVisible();
       expect(container.querySelector('Ribbon')).toBeDefined()
-      expect(asFragment()).toMatchSnapshot();
     });
   });
 
@@ -51,7 +49,6 @@ describe("Game Component", () => {
     await wait(() => {
       forceVisible();
       expect(container.querySelector('Jackpot')).toBeDefined()
-      expect(asFragment()).toMatchSnapshot();
     });
   });
 });

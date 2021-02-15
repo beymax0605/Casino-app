@@ -51,7 +51,6 @@ describe("MainContainer Component", () => {
     await wait(() => {
       forceVisible();
       expect(container.getElementsByClassName('Game').length).toBe(2);
-      expect(asFragment()).toMatchSnapshot();
     });
   });
 });
