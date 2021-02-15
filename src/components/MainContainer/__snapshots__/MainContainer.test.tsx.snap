@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContainer Component Should not show spinner if data is not empty 1`] = `
+<DocumentFragment>
+  <div
+    class="loading"
+  />
+  <div
+    class="Main-Container "
+  >
+    <div
+      class="Game"
+    >
+      Hello World
+    </div>
+    <div
+      class="Game"
+    >
+      Hello World
+    </div>
+  </div>
+</DocumentFragment>
+`;
