@@ -16,8 +16,8 @@ export const Game = (props: { game: GameInterface, jackpots: JackpotStateInterfa
   const { game, jackpots } = props;
   const [image, setImage] = useState("");
   useEffect(() => {
-    (new FetchImageWorker()).handle(game.image).then(url => {
-      setImage(url)
+    (new FetchImageWorker()).handle(game.image).then(event => {
+      setImage(URL.createObjectURL(event.data));
     }).catch(e => console.log(e));
   }, [game.image]);
   return (

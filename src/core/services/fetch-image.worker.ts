@@ -1,35 +1,32 @@
 export class FetchImageWorker {
-  public async handle(url: string) {
+  private static worker: Worker;
+  public handle(url: string): Promise<MessageEvent> {
     const worker = FetchImageWorker.initiateWorker();
-    const workerUrl =  await this.getImageUrl(worker, url)
-    worker.terminate();
-    return workerUrl;
+    const channel = new MessageChannel();
+    worker.postMessage(url, [channel.port1]);
+    return new Promise((res, rej)=>{
+      channel.port2.onmessage=res;
+    });
   }
 
   private static initiateWorker() {
+    if(!FetchImageWorker.worker) {
       const blob = new Blob([`(${fetchImage.toString()})()`], {type: 'text/javascript'});
       let blobUrl = URL.createObjectURL(blob);
-      return new Worker(blobUrl);
-  }
-
-  private getImageUrl(worker: Worker, url: string): Promise<string> {
-    return new Promise( (resolve, rejectionFunc) => {
-      worker.onmessage = (event) => {
-        resolve(URL.createObjectURL(event.data));
-      };
-      worker.postMessage(url);
-    });
+      FetchImageWorker.worker = new Worker(blobUrl);
+    }
+    return FetchImageWorker.worker;
   }
 }
 
 function fetchImage() {
   /* eslint-disable-next-line no-restricted-globals */
-  addEventListener("message", (event) => {
-    fetch(event.data)
+  addEventListener("message", (e) => {
+   const port = e.ports[0]; // this is where we will respond
+    fetch(e.data)
       .then(r => r.blob())
       .then(data => {
-        // @ts-ignore
-        postMessage(data);
+        port.postMessage(data);
       });
   });
 }
